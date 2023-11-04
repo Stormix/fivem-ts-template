@@ -1,0 +1,31 @@
+{
+  "name": "fivem-boilerplate",
+  "version": "2.0.0",
+  "description": "A boilerplate for TypeScript in FiveM",
+  "main": "index.js",
+  "scripts": {
+    "build": "bun run typecheck && node build/build-bundle.js",
+    "prebuild": "rimraf ./dist",
+    "prewatch": "rimraf ./dist",
+    "typecheck": "tsc --noEmit -p client/tsconfig.json && tsc --noEmit -p server/tsconfig.json",
+    "watch": "cross-env WATCH_MODE=1 node build/build-bundle.js",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+  },
+  "author": "Stormix <hello@stormix.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "@citizenfx/client": "^2.0.6063-1",
+    "@citizenfx/server": "^2.0.6063-1",
+    "@types/node": "^20.6.4",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.19.3",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  }
+}
